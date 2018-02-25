@@ -17,16 +17,17 @@ import java.util.ArrayList;
  */
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-
+    //deklarasi dan inisiasi variable umum/global
     private ArrayList<String> tvJudul, tvSubjudul;
     private ArrayList<Integer> Lgambar;
 
     public RecyclerViewAdapter(ArrayList<String> judulMinuman, ArrayList<String> subJudul, ArrayList<Integer> gambar) {
-
+        //deklarasi dan inisiasi variable umum/global
         tvJudul = judulMinuman;
         tvSubjudul = subJudul;
         Lgambar = gambar;
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView judul;
@@ -45,6 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             imggambar = (ImageView) view.findViewById(R.id.imgList);
             itemList = view.findViewById(R.id.list);
 
+            //ketika klik salah satu dari list yang ada maka akan ada detail dari setiap listnya
             itemList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -163,10 +165,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return vh;
     }
     @Override
+    //menghubungkan data dengan view holder pada posisi yang ditentukan dalam RecyclerView
     public void onBindViewHolder(RecyclerViewAdapter.ViewHolder holder, int position){
+        //mengambil element dari array pada posisi tertentu
         final String menu = tvJudul.get(position);
         final String harga = tvSubjudul.get(position);
         final Integer a = Lgambar.get(position);
+        //untuk mengeset isi view
         holder.judul.setText(menu);
         holder.subjudul.setText(harga);
         holder.imggambar.setImageResource(a);

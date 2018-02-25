@@ -17,7 +17,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         final Toast toast = Toast.makeText(this, "Loading", Toast.LENGTH_LONG);
         toast.show();
 
-        //kemudian akan pindah ke activity selanjutnya
+        //ketika proses loading sudah selesai kemudian akan pindah ke activity selanjutnya
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

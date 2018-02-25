@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
+    //deklarasi dan inisiasi variable umum/global
     EditText username, password;
     Button login;
 
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //sebagai inisiasi id pada activity_login.xml
         username = (EditText)findViewById(R.id.username);
         password = (EditText)findViewById(R.id.password);
         login = (Button)findViewById(R.id.bt_login);
@@ -29,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
                 final String usernameKey = username.getText().toString();
                 String passwordKey = password.getText().toString();
 
+                //username dan password yang akan di inputkan pada saat login dan akan menampilkan toast pada saat username dan password benar
+                //dan akan menampilkan toast juga pada saat username dan password salah
                 if (usernameKey.equals("EAD") && passwordKey.equals("MOBILE")){
                     Toast.makeText(getApplicationContext(), "Login Berhasil!!", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
